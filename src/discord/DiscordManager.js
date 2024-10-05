@@ -38,6 +38,7 @@ class DiscordManager extends CommunicationBridge {
 
     client.commands = new Collection();
     const commandFiles = fs.readdirSync("src/discord/commands").filter((file) => file.endsWith(".js"));
+    require("./other/statsChannel.js");
 
     for (const file of commandFiles) {
       const command = require(`./commands/${file}`);
